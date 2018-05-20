@@ -1,0 +1,152 @@
+<html>
+<head>
+    <title>Chrono Crash</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+        crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="assets/override.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+</head>
+<body>
+    <div class="container background-image" id="gameContainer">
+        <div class="row" style="background-color: #DDDDDD;" id="firstRow">
+            <div class="col-md-4">
+                <h3>X Wins | Y Losses</h3>
+            </div>
+            <div class="col-md-4" style="text-align: center">
+                <strong>99s</strong>
+            </div>
+            <div class="col-md-4">
+                <h3>X Wins | Y Losses</h3>
+            </div>
+        </div>
+        <div class="row" style="background-color: #DDDDDD;" id="secondRow">
+            <div class="col-md-4" id="userScore">userScore</div>
+            <div class="col-md-4">
+                <h1 style="text-align: center">FIGHT!</h1>
+            </div>
+            <div class="col-md-4" id="enemyScore">enemyScore</div>
+        </div>
+        <div class="row" id="thirdRow">
+            <div class="col-md-4">
+                <div class="col-md-2"></div>
+                <div class="col-md-8">
+                    <div class="progress">
+                        <strong>HP</strong>
+                        <div class="progress-bar bg-success" id="userHP" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0"
+                            aria-valuemax="100">100%</div>
+                    </div>
+                    <div class="progress">
+                        <strong>MP</strong>
+                        <div class="progress-bar bg-warning" id="userMP" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0"
+                            aria-valuemax="100">100%</div>
+                    </div>
+                </div>
+                <div class="col-md-2"></div>
+            </div>
+            <div class="col-md-4" id="playAgain" style="text-align: center">
+                <button type="button" id="restartLevel" class="btn btn-primary">Restart?</button>
+            </div>
+            <div class="col-md-4">
+                <div class="col-md-2"></div>
+                <div class="col-md-8">
+                    <div class="progress">
+                        <div class="progress-bar bg-success" id="enemyHP" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0"
+                            aria-valuemax="100">100%</div>
+                        <strong>HP</strong>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar bg-warning" id="enemyMP" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0"
+                            aria-valuemax="100">100%</div>
+                        <strong>MP</strong>
+                    </div>
+                </div>
+                <div class="col-md-2"></div>
+            </div>
+        </div>
+        <div class="row" id="playerRow">
+            <div class="col-md-4">
+                <div class="card" id="player1img" style="width: 18rem;">
+                    <!-- <img class="card-img-top" id="userImage" src="assets/images/1chrono/ctart08.jpg" height="50%" alt="Player 1"> -->
+                    
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="jumbotron jumbotron-fluid" id="jumbo-music" style="max-height: 25%;">
+                    <div class="container">
+                        <p class="lead" id="jumboP">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+                        <button type="button" id="kick" class="btn btn-primary">Kick</button>
+                        <button type="button" id="punch" class="btn btn-success">Punch</button>
+                        <button type="button" id="block" class="btn btn-warning">Block</button>
+                        <button type="button" id="magic1" class="btn btn-danger">Magic 1</button>
+                        <div id="belowjumbo"></div>
+                    </div>
+                </div>
+                <br>
+            </div>
+            <div class="col-md-4">
+                <div class="card"  id="enemyimg" style="width: 18rem;">
+                    <img class="card-img-top" id="enemyImage" src="assets/images/7magus/ctart07.jpg" height="50%" alt="Player 2">
+                    
+                </div>
+            </div>
+        </div>
+        <div class="row" id="itemRow">
+            <div class="col-md-4">
+            </div>
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+            </div>
+        </div>
+
+    </div>
+
+    <div class="container" id="spacing-row" style="min-height: 300px;">
+        <div class="row" id="selectionRow">
+            
+            <div class="col-lg-4"></div>
+            <div class="col-lg-4">
+                <div class="row">
+                    <h1 style="background-color: #CCC">Chrono Crash</h1>
+                </div>
+            </div>
+            <div class="col-lg-4"></div>
+        </div>        
+    </div>
+
+    <div class="container character-select" id="playerSelectContainer">
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-9">
+            <div class="jumbotron jumbotron-fluid" id="playerSelect" style="max-height: 20%;">
+                <div class="container">
+                    <h2 id="char-select" style="margin-top: -100px;">
+                        <strong style="color: white;">CHARACTER SELECT</strong>
+                    </h2>
+                    <img class="img-fluid image-select" id="aylaSelect" src="assets/thumbs/Ayla3.jpg">
+                    <img class="img-fluid image-select" id="cronoSelect" src="assets/thumbs/Crono3.jpg">
+                    <img class="img-fluid image-select" id="frogSelect" src="assets/thumbs/Frog3.jpg">
+                    <img class="img-fluid image-select" id="luccaSelect" src="assets/thumbs/Lucca3.jpg">
+                    <img class="img-fluid image-select" id="marleSelect" src="assets/thumbs/Marle3.jpg">
+                    <img class="img-fluid image-select" id="roboSelect" src="assets/thumbs/Robo3.jpg">
+                    <img class="img-fluid image-select" id="magusSelect" src="assets/thumbs/Magus.jpg">
+                    <!-- <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p> -->
+                </div>
+            </div>
+            </div>
+            <div class="col-md-1"></div>
+        </div>
+    </div>
+    <script src="assets/js/main.js"></script>
+</body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+    crossorigin="anonymous"></script>
+
+    </html
