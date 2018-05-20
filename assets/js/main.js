@@ -94,7 +94,7 @@ $(document).ready(function () {
     function getEnemy() {
         var Enemies = listFighters;
         Enemies.splice(listFighters.indexOf(User), 1);
-        Enemy = Enemies[Math.floor(Math.random() & Enemies.length)];
+        Enemy = Enemies[Math.floor(Math.random() * Enemies.length)];
     }
     function playerSelect() {
         if (User.userReady === "false") {
